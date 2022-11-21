@@ -1,0 +1,89 @@
+body {
+    user-select: none;
+}
+
+.cookie {
+    position: absolute;
+    background: url(cookie.png);
+    width: 128px;
+    height: 128px;
+    left: -64px;
+    cursor: pointer;
+}
+
+.cookie:hover {
+    background-position: -128px;
+}
+
+.cookie:active {
+    background-position: -256px;
+}
+
+div {
+    display: block;
+}
+
+.middle {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    width: 0px;
+}
+
+.contador {
+    background: url(currency.png) no-repeat;
+    padding: 4px 4px 0px 36px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 15px;
+    font-size: large;
+    font-weight: bolder;
+    height: 28px;
+}
+
+.popContainer {
+    position: relative;
+}
+
+@keyframes popUp{
+    0% {
+        opacity: 1;
+        top: 150px;
+    }
+
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.popShow {
+    position: absolute;
+    animation: popUp 0.7s forwards;
+    font-size: large;
+    font-weight: bold;
+}
+
+.upgrades {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.upgrades>div {
+    border: 1px solid;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.upgrades>div:hover {
+    background-color: bisque;
+}
+
+.upgrades>div:active {
+    transform: scale(0.95);
+}

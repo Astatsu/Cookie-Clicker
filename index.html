@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contador">
+        0
+    </div>
+    <div class="middle">
+        <div class="cookie">
+        </div>
+    </div>
+
+    <div class="upgrades">
+        <div class="cursor upg" id="1">
+        </div>
+        <div class="nabo upg" id="2">
+        </div>
+    </div>
+
+    <div class="popContainer">
+    </div>
+
+    <script>
+        let cookie = document.querySelector(".cookie");
+        let contador = document.querySelector(".contador");
+        let popContainer = document.querySelector(".popContainer");
+
+        cookie.addEventListener("click", addContador);
+
+        function addContador() {
+            contador.innerHTML = Number(contador.innerHTML) + 1
+            let popUp = document.createElement("div")
+            popContainer.appendChild(popUp);
+            popUp.innerHTML = "+1";
+            popUp.className = "popShow";
+            popUp.style.left = Math.floor(Math.random()* 5 + 47) + "%"
+            setTimeout(() => {
+                popUp.remove()
+            }, 700)
+        }
+
+        class upgrade {
+            tipo(nome, preco, cps) {
+                this.nome = nome;
+                this.preco = preco;
+                this.quant = 0;
+                this.cps = cps;
+            }
+        }
+        let cursor = new upgrade("Cursor", 15, 1);
+        let nabos = new upgrade("Nabos", 100, 5);
+
+        let upgrades = document.getElementsByClassName("upg");
+
+        for (i = 0; i < upgrades.length; i++) {
+            upgrades[i].addEventListener("click", () => {
+                comprar(upgrades[0].id);
+            })
+        }
+
+        function comprar(id) {
+            alert()
+        }
+
+    </script>
+</body>
+</html>
